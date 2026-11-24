@@ -1,0 +1,52 @@
+@startuml
+class TiendaEcoPaso{
+- nombre : String = "EcoPaso"
+- bannerHero: Producto
++ mostrarPaginaPrincipal(): void
++ filtrarPorCategoria(id categoria: int): List<Producto>
+}
+
+class Categoria{
+- idCategoria: int
+- nombre: String
+- descripcion: String
+}
+
+class Producto{
+- idProducto: int
+- nombre: Sting
+- descripcion: String
+- precio: float
+- stockActual: int
+- stockMinimoAlerta: int
+- imagenURL: String
++ obtenerEstadoColor(): String
++ disponible(): boolean
+}
+
+class Carrito{
+- idCarrito: int
+- fechaDeCreacion: Date
+- total: float
++ agregarProducto(produc: Producto, cantidad: int): void
++ calcularElTotal(): float
+}
+
+class ItemCarrito{
+- cantidad: int
+- subTotal: floay
+}
+
+class Pedido{
+- idPedido: int
+- fechaDePedido: Dato
+- estado: String
++ confirmacionDeCompra(): boolean
+}
+
+TiendaEcoPaso "1" *-- "*" Categoria : organiza >
+Categoria "1" o-- "*" Producto : contiene >
+Carrito "1" *-- "*" ItemCarrito : compone >
+ItemCarrito "*" --> "1" Producto : referencia >
+Carrito "1" --> "0..1" Pedido : genera > 
+@enduml

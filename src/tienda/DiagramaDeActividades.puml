@@ -1,0 +1,25 @@
+@startuml
+start
+:Usuario ingresa a "EcoPaso";
+:Sistema carga variables CSS globales;
+:Mostrar Encabezado, Banner Hero y Barra de Categorias;
+repeat
+:Sistema consulta stock de productos en cuadricula;
+if (¿Stock == 0?) then (Si)
+    :Asignar color Rojo + Etiqueta "Agotado";
+    :Deshabilitar boton de compra;
+else if (¿Stock == Stock Minimo?) then (Si)
+    :Asignar colo Amarillo + Etiqueta "Pocas unidades";
+    :Habilitar boton "Compra Ahora";
+else (Srock suficiente)
+    :Asignar color Verde + Etiqueta "Disponible";
+    :Habilitar boton "Compra ahora";
+endif
+    :Usuario explora catalogo o filtra categorias;
+repeat while (¡Selecciona "Compra ahora" en producto disponible?) is (No)
+-> Si;
+:Agregar zapatilla al Carrito;
+:Redirigir a pasarela de pago (Checkout);
+:Confirmar pedido y descontar inventario;
+stop
+@enduml

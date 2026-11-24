@@ -1,0 +1,57 @@
+@startsalt
+{--+
+  ' 1. Encabezado de navegacion
+  {
+    <b>EcoPaso</b> | . | Inicio | Hombre | Mujer | Sostenibilidad | [Carrito (0)]
+  }
+  ==
+  ' 2. Banner principal Hero
+  {#
+    {
+      <b>NUEVA LÍNEA ECORUNNER 2026</b>
+      "Corre ligero, deja una huella verde"
+      Calzado 100% reciclado y transpirable.
+      .
+      [  <b>Compra Ahora</b>  ]
+    } | {
+      .
+      [   IMAGEN DESTACADA   ]
+      [  Zapatilla Estrella  ]
+      .
+    }
+  }
+  --
+  ' 3. BARRA DE CATEGORÍAS (RF-01)
+  {
+    Categorías: | (X) Todos | () Running | () Senderismo | () Urbano
+  }
+  --
+  ' 4. CUADRÍCULA DE PRODUCTOS DESTACADOS (RF-01, RF-02, RF-03, RF-04)
+  {
+    ' Tarjeta Producto 1: Disponible
+    {+
+      [  Foto: Trail Green  ]
+      <b>EcoTrail Verde Oliva</b>
+      $1,899 MXN
+      <color:green><b>[✓] Disponible</b></color>
+      [  <b>Comprar ahora</b>  ]
+    } |
+    ' Tarjeta Producto 2: Pocas unidades
+    {+
+      [  Foto: Sky Breeze   ]
+      <b>EcoSky Azul Claro</b>
+      $1,650 MXN
+      <color:orange><b>[!] Pocas unidades</b></color>
+      [  <b>Comprar ahora</b>  ]
+    } |
+    ' Tarjeta Producto 3: Agotado
+    {+
+      [  Foto: Terra Low    ]
+      <b>EcoTerra Edición</b>
+      $2,100 MXN
+      <color:red><b>[✕] Agotado</b></color>
+      [   No disponible   ]
+    }
+  }
+}
+@endsalt

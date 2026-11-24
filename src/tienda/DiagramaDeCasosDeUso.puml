@@ -1,0 +1,23 @@
+@startuml
+left to right direction 
+actor "Cliente" as Cliente
+actor "Administrador" as Admin
+
+rectangle "Tienda Online EcoPaso"{
+usecase "Visualizar Pagina Principal\n (Banner Hero y Catalogo)" as UC1
+usecase "Filtrar por Categorias" as UC2
+usecase "Consultar Disponibilidad\n (Semaforo + Etiquetas accesible)" as UC3
+usecase "Seleccionar Zapatilla y comprar ahora" as UC4
+usecase "Procesar Pago/Checkout" as UC5
+usecase "Gestionar inventario y Stock" as UC6
+}
+Cliente --> UC1
+Cliente --> UC2
+Cliente --> UC3
+Cliente --> UC4
+UC4 ..> UC5 : <<include>>
+UC1 ..> UC3 : <<include>>
+Admin --> UC6
+UC6 ..> UC3 : <<extend>> (Actualizar estado visual)
+ 
+@enduml
